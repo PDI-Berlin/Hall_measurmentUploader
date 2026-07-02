@@ -1,0 +1,7 @@
+folder_path: /path/to/measurement/folders
+instrument: PDI_Hall_Setup
+
+users:
+  username:
+    base_url: http://your-server.com/nomad-oasis/api/v1
+    upload_id: upload_id_if_you_want_to_reuse_existing

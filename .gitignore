@@ -1,0 +1,9 @@
+*.zip
+*.archive.json
+*.pyc
+__pycache__/
+*/
+*/*/
+# NOMAD uploads
+# Processed measurement folders
+*.dat
