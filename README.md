@@ -55,13 +55,15 @@ python hall_uploader.py <folder> --dry-run    # build files only, no upload
 Saves your settings so you don't have to type them every time:
 
 ```yaml
-folder_path: /path/to/measurement/folders
+folder_path: C:\Users\sina\Nextcloud\Nomad\Hall_PC\m84319_A
 instrument: PDI_Hall_Setup
+last_folder: C:\Users\sina\Nextcloud\Nomad\Hall_PC\m84319_A
+last_user: sina
 
 users:
-  username:
-    base_url: http://your-server.com/nomad-oasis/api/v1
-    upload_id: upload_id_if_you_want_to_reuse_existing
+  sina:
+    base_url: http://intra8-02.pdi-berlin.de/nomad-oasis/api/v1
+    upload_id: F19SpTc8TSyLYy2TNgH_zQ
 ```
 
 - `folder_path` - last used folder, shown on startup
@@ -107,3 +109,54 @@ Follows the `nomad.datamodel.metainfo.eln.ELNMeasurement` schema:
 - Python 3.8+
 - `requests` (`pip install requests`)
 - `pyyaml` (`pip install pyyaml`) - for config file support
+
+## Windows Batch Interface (Recommended for Windows Users)
+
+For Windows users who prefer a GUI-like interface, a batch file `hall_uploader.bat` is included in this repository. It provides:
+
+### Features:
+- **Interactive UI with colored terminal** - Resembles a modern GUI application
+- **One-click access to all modes** - Interactive or CLI processing
+- **Automatic dependency checks** - Verifies Python and required modules
+- **Visual progress tracking** - Clear headers, subheaders, and progress messages
+- **Configuration setup wizard** - Guided setup of your NOMAD server settings
+
+### Usage:
+
+**1. Initial Setup:**
+```batch
+# Run once to check dependencies and setup environment
+hall_uploader.bat
+```
+
+**2. Interactive Mode (Recommended):**
+```batch
+# Interactive UI for guided uploads
+hall_uploader.bat
+# Select option 1 (Interactive Mode)
+```
+
+**3. Command Line Mode:**
+```batch
+# Process a specific folder with progress tracking
+hall_uploader.bat process "C:\path\to\measurement\folder"
+
+# Dry-run mode (test without uploading)
+hall_uploader.bat process "C:\path\to\measurement\folder" --dry-run
+```
+
+**4. Help and Configuration:**
+```batch
+hall_uploader.bat --help     # Show help and options
+hall_uploader.bat --version  # Show version information
+```
+
+### Benefits:
+- **User-friendly** - Intuitive menu interface with visual feedback
+- **Feature-rich** - All the functionality of the Python script with enhanced UX
+- **Error handling** - Comprehensive error messages and recovery steps
+- **Cross-platform support** - Works on any Windows system with Python
+- **Zero configuration** - Automatically checks and installs dependencies
+
+### Note for Windows Users:
+The batch file is optimized for Windows environments and provides a much better user experience than running `python hall_uploader.py` directly in the command prompt.
