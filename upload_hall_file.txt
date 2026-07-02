@@ -1,8 +1,0 @@
-- bat-file provides path and sample Name, datetime to uploader, Instrument_ID - if just filepath: parse it to retrieve sample_ID and datetime
-- fill in instrument
-- uploader creates and elnmeasurement.archive.json filling datetime, sample_ID in and creates a results_section for each [.dat-file] xyz.dat file in the Folder
--> in the results Quantities name=[.dat-filename] and result=Content of the .dat-file.
-
-Need to decode line breaks and tabs into the json file! otherwise json parsing error (see last item) in 
-m84317_C__Hall_20260605_1401_norefs_flat.archive.json
-in comparison to m84317_C__Hall_20260605_1401_norefs_tabbed.archive.json
